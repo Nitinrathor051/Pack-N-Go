@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    
+    <link rel="icon" href="Logo2.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <style>
+        /* ==================== Navbar ==================== */
+        /* Navbar logo */
+        #img1 {
+            width: auto;
+            max-width: 200px;
+            max-height: 180px;
+            position: relative;
+            bottom: 16px;
+        }
+
+        /* Navbar container */
+        #nav1 {
+            height: 90px;
+        }
+
+        /* ==================== Booking Page Styles ==================== */
+        body {
+            font-family: Arial, sans-serif;
+            animation: fadeIn 1.5s ease-in;
+            background-color: #e0f7fa; /* bg-info-subtle equivalent */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .booking-container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        .tab-content {
+            animation: slideUp 0.5s ease-in-out;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .search-btn {
+            transition: all 0.3s;
+        }
+        .search-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .offers {
+            margin-top: 50px;
+        }
+
+        .offer-card {
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+        }
+        .offer-card:hover {
+            transform: scale(1.05);
+        }
+
+        .price {
+            text-decoration: line-through;
+            color: red;
+        }
+
+        .footer {
+            background: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .footer a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #f8f9fa;
+        }
+
+        /* Responsive Navbar */
+        @media (max-width: 1200px) {
+            #img1 { max-width: 180px; max-height: 150px; }
+            #nav1 { height: auto; }
+        }
+        @media (max-width: 992px) {
+            #img1 { max-width: 150px; max-height: 120px; }
+        }
+        @media (max-width: 768px) {
+            #img1 { max-width: 150px; max-height: 120px; }
+        }
+        @media (max-width: 576px) {
+            #img1 { max-width: 120px; max-height: 90px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar: SAME AS HOME PAGE -->
+    <nav class="navbar navbar-expand-lg bg-info" id="nav1">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="logo2.png" alt="loading..." id="img1"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="Booking.html"><i class="fa-solid fa-pen-to-square"></i> Booking</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Destination.html"><i class="fa-solid fa-plane"></i> Destinations</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="About.html">About</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="Contactus.html">Contact Us</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="policy.html">Terms & Privacy Policy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Blog.html"><i class="fa-solid fa-bookmark"></i> Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="login.html"><i class="fa-solid fa-user"></i> Login</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" style="width: 300px;" placeholder="Explore your Journey..." aria-label="Search">
+                    <button class="btn btn-outline-success bg-info-subtle" type="submit" style="width: 45%;"><i class="fa-brands fa-searchengin"></i> Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Booking Container (UNCHANGED) -->
+    <div class="container booking-container">
+        <ul class="nav nav-tabs" id="bookingTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="flights-tab" data-bs-toggle="tab" data-bs-target="#flights" type="button" role="tab">Flights</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="hotels-tab" data-bs-toggle="tab" data-bs-target="#hotels" type="button" role="tab">Hotels</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="trains-tab" data-bs-toggle="tab" data-bs-target="#trains" type="button" role="tab">Trains</button>
+            </li>
+        </ul>
+
+        <div class="tab-content mt-3" id="bookingTabsContent">
+            <!-- Flights Tab -->
+            <div class="tab-pane fade show active" id="flights" role="tabpanel">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>From</label>
+                        <input type="text" class="form-control" placeholder="Enter your location">
+                    </div>
+                    <div class="col-md-6">
+                        <label>To</label>
+                        <input type="text" class="form-control" placeholder="Enter destination">
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <label>Departure Date</label>
+                        <input type="date" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label>Return Date</label>
+                        <input type="date" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label>Passengers</label>
+                        <select class="form-control">
+                            <option>1 Passenger</option>
+                            <option>2 Passengers</option>
+                            <option>3+ Passengers</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <button class="btn btn-primary search-btn"><i class="fa fa-search"></i> Search Flights</button>
+                </div>
+            </div>
+
+            <!-- Hotels Tab -->
+            <div class="tab-pane fade" id="hotels" role="tabpanel">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Location</label>
+                        <input type="text" class="form-control" placeholder="Enter city or hotel">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Guests</label>
+                        <select class="form-control">
+                            <option>1 Guest</option>
+                            <option>2 Guests</option>
+                            <option>3+ Guests</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label>Check-in</label>
+                        <input type="date" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Check-out</label>
+                        <input type="date" class="form-control">
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <button class="btn btn-primary search-btn"><i class="fa fa-search"></i> Search Hotels</button>
+                </div>
+            </div>
+
+            <!-- Trains Tab -->
+            <div class="tab-pane fade" id="trains" role="tabpanel">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>From</label>
+                        <input type="text" class="form-control" placeholder="Enter departure station">
+                    </div>
+                    <div class="col-md-6">
+                        <label>To</label>
+                        <input type="text" class="form-control" placeholder="Enter destination station">
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label>Departure Date</label>
+                        <input type="date" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Passengers</label>
+                        <select class="form-control">
+                            <option>1 Passenger</option>
+                            <option>2 Passengers</option>
+                            <option>3+ Passengers</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <button class="btn btn-primary search-btn"><i class="fa fa-search"></i> Search Trains</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Offers Section (UNCHANGED) -->
+    <div class="container offers">
+        <h2 class="text-center mt-5">Special Trip Offers</h2>
+        <div class="row">
+            <div class="col-md-4 col-sm-12">
+                <div class="card offer-card">
+                    <img src="goa.jpg" class="card-img-top" alt="Trip 1" height="300px">
+                    <div class="card-body">
+                        <h5 class="card-title">Beach Paradise</h5>
+                        <p class="card-text">Enjoy the best beaches with our exclusive packages.</p>
+                        <p class="price">₹70,000</p>
+                        <p>₹54,900</p>
+                        <a href="#" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="card offer-card">
+                    <img src="andaman.jpg" class="card-img-top" alt="Trip 2" height="280px">
+                    <div class="card-body">
+                        <h5 class="card-title">Mountain Adventure</h5>
+                        <p class="card-text">Experience breathtaking views and adventure activities.</p>
+                        <p class="price">₹60,000</p>
+                        <p>₹47,900</p>
+                        <a href="#" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="card offer-card">
+                    <img src="jaipur.jpeg" class="card-img-top" alt="Trip 3" height="300px">
+                    <div class="card-body">
+                        <h5 class="card-title">City Escape</h5>
+                        <p class="card-text">Explore top cities with exclusive hotel deals.</p>
+                        <p class="price">₹50,000</p>
+                        <p>₹39,900</p>
+                        <a href="#" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer (UNCHANGED) -->
+    <footer class="footer">
+        <p>Follow us on: 
+            <a href="#" class="text-white fs-4"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-white fs-4"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" class="text-white fs-4"><i class="fa-brands fa-linkedin-in"></i></a>
+        </p>
+        <p>&copy; 2025 PackNGo. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

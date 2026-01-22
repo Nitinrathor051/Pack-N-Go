@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - PackNGo</title>
+    <link rel="icon" href="Logo1.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+/* ==================== BODY BACKGROUND ==================== */
+body {
+  background-image: url(bg4.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* ==================== NAVBAR FIX ==================== */
+#nav1 {
+  min-height: 90px;
+  padding: 5px 15px;
+}
+
+#img1 {
+  max-width: 200px;
+  max-height: 150px;
+  width: auto;
+  height: auto;
+  position: relative;
+  bottom: 10px;
+}
+
+/* Responsive navbar fix */
+@media (max-width: 992px) {
+  #nav1 {
+    height: auto;
+  }
+
+  #img1 {
+    max-width: 160px;
+    max-height: 120px;
+    bottom: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  #img1 {
+    max-width: 130px;
+    max-height: 100px;
+  }
+}
+
+/* ==================== HEADER & TEXT ANIMATIONS ==================== */
+.header-bg {
+  animation: fadeInDown 1.5s ease-in-out;
+}
+
+.container h2 {
+  border-bottom: 2px solid #17a2b8;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  animation: slideInLeft 1s ease-in-out;
+}
+
+.container p {
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Hover effects */
+.container h2:hover {
+  color: #ffcc00;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.container p:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* ==================== KEYFRAMES ==================== */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ==================== GENERAL LAYOUT ==================== */
+header {
+  height: 200px;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+/* ==================== FLIP CARD TEAM SECTION ==================== */
+.flip-card {
+  background-color: transparent;
+  width: 250px;
+  height: 350px;
+  perspective: 1000px;
+  margin: 20px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.flip-card-front {
+  background-color: #ffffff;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.flip-card-back {
+  background-color: #a8e063;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(180deg);
+}
+
+/* ==================== PROFILE INFO ==================== */
+.profile-name {
+  background: #7CD300;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+
+.social-icons a {
+  margin: 10px;
+  font-size: 24px;
+  color: black;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #333;
+}
+</style>
+
+  </head>
+  <body class="bg-info-subtle">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg bg-info" id="nav1">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo2.png" alt="loading..." id="img1">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="Booking.html"><i class="fa-solid fa-pen-to-square"></i> Booking</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Destination.html"><i class="fa-solid fa-plane"></i> Destinations</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="About.html">About</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="Contactus.html">Contact Us</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="policy.html">Terms & Privacy Policy</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Blog.html"><i class="fa-solid fa-bookmark"></i> Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="login.html"><i class="fa-solid fa-user"></i> Login</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" style="width: 300px;" placeholder="Explore your Journey..." aria-label="Search">
+            <button class="btn btn-outline-success bg-info-subtle" type="submit" style="width: 45%;"><i class="fa-brands fa-searchengin"></i> Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- About us -->
+   
+
+    <h2 class="mt-4 text-center">Meet Our Team</h2>
+
+    <div class="container d-flex justify-content-center">
+        <!-- Profile 1 -->
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <!-- Front Side -->
+                <div class="flip-card-front">
+                    <img src="nitin.jpg" alt="Profile 1" style="background-size: contain;">
+                    <div class="profile-name">NITIN RATHORE</div>
+                </div>
+                <!-- Back Side -->
+                <div class="flip-card-back">
+                    <h4>Co-Founder, CFO</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile 2 -->
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="naitik.jpeg" alt="Profile 2">
+                    <div class="profile-name">NAITIK JAIN</div>
+                </div>
+                <div class="flip-card-back">
+                    <h4>CEO</h4>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/tech_trooper.29/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/naitik-jain-5108b2307/"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile 3 -->
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="Vijay.jpg" alt="Profile 3">
+                    <div class="profile-name">VIJAY SHAKYA</div>
+                </div>
+                <div class="flip-card-back">
+                    <h4>Marketing Head</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="container my-5 bg-white text-dark p-5 rounded-3 shadow">
+      <h2 class="text-center mb-4">Who We Are</h2>
+      <p class="fs-5">At PackNGo, we are passionate about turning travel dreams into reality. With years of experience in the travel industry, our mission is to provide seamless, enjoyable, and memorable travel experiences to adventurers around the world. Whether you're exploring exotic destinations or planning a weekend getaway, PackNGo ensures every journey is extraordinary.</p>
+
+      <h2 class="text-center my-4">Our Mission</h2>
+      <p class="fs-5">We strive to make travel accessible, enjoyable, and hassle-free for everyone. From personalized itineraries to 24/7 support, we prioritize your comfort and satisfaction. At PackNGo, we believe travel is not just about destinations—it's about creating stories you'll cherish forever.</p>
+    </div>
+    
+
+  </body>
+</html>

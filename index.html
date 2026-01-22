@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PackNGo</title>
+    <link rel="icon" href="Logo2.png" />
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+<style>
+/* ==================== Navbar ==================== */
+/* Navbar logo */
+#img1 {
+  width: auto;
+  max-width: 200px;
+  max-height: 180px;
+  position: relative;
+  bottom: 16px;
+}
+
+/* Navbar container */
+#nav1 {
+  height: 90px;
+}
+
+/* ==================== Carousel ==================== */
+/* Carousel images */
+.carousel-inner img {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+/* ==================== Cards ==================== */
+/* Card images */
+#card, #img2 {
+  object-fit: cover;
+  width: 100%;
+}
+
+/* International destinations cards */
+#card {
+  height: 180px; /* smaller height */
+}
+
+/* India destinations cards */
+#img2 {
+  height: 150px;
+}
+
+/* Card hover effect */
+.card {
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Remove extra gutter between cards on large screens */
+.row.g-0 > [class*="col-"] {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* ==================== Responsive Adjustments ==================== */
+
+/* Large screens */
+@media (max-width: 1200px) {
+  .carousel-inner img {
+    max-height: 450px;
+  }
+  #card {
+    height: 160px;
+  }
+  #img2 {
+    height: 140px;
+  }
+}
+
+/* Medium screens */
+@media (max-width: 992px) {
+  #img1 {
+    max-width: 180px;
+    max-height: 150px;
+  }
+  input.form-control {
+    width: 180px !important;
+  }
+  #nav1 {
+    height: auto;
+  }
+  #card {
+    height: 140px;
+  }
+  #img2 {
+    height: 120px;
+  }
+}
+
+/* Small screens */
+@media (max-width: 768px) {
+  #img1 {
+    max-width: 150px;
+    max-height: 120px;
+  }
+  input.form-control {
+    width: 100% !important;
+    margin-bottom: 10px;
+  }
+  .btn {
+    width: 100% !important;
+    margin-bottom: 10px;
+  }
+  #card {
+    height: 120px;
+  }
+  #img2 {
+    height: 100px;
+  }
+  /* 2 cards per row on small screens */
+  .col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 576px) {
+  #img1 {
+    max-width: 120px;
+    max-height: 90px;
+  }
+  .carousel-inner img {
+    max-height: 300px;
+  }
+  #card {
+    height: 100px;
+  }
+  #img2 {
+    height: 90px;
+  }
+  /* 2 cards per row on extra small screens */
+  .col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+</style>
+
+  </head>
+
+  <body class="bg-info">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+     <!-- Navbar -->
+     <nav class="navbar navbar-expand-lg bg-info" id="nav1">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="logo2.png" alt="loading..." id="img1"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="Booking.html"><i class="fa-solid fa-pen-to-square"></i> Booking</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Destination.html"><i class="fa-solid fa-plane"></i> Destinations</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="About.html">About</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="Contactus.html">Contact Us</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="policy.html">Terms & Privacy Policy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Blog.html"><i class="fa-solid fa-bookmark"></i> Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="login.html"><i class="fa-solid fa-user"></i> Login</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" style="width: 300px;" placeholder="Explore your Journey..." aria-label="Search">
+                    <button class="btn btn-outline-success bg-info-subtle" type="submit" style="width: 45%;"><i class="fa-brands fa-searchengin"></i> Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    
+
+    <!-- Carousel Section -->
+    <section>
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active bg-info" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="bg-info" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="bg-info" aria-label="Slide 3"></button>
+        </div>
+
+        <div class="carousel-inner" style="width: 100%; margin: auto; background-size: cover;">
+          <div class="carousel-item active" data-bs-interval="1000">
+            <a href="Booking.html"><img src="slider1.png" class="d-block w-100" alt="..."></a>
+          </div>
+          <div class="carousel-item" data-bs-interval="1000">
+            <a href="Booking.html"><img src="slider2.png" class="d-block w-100" alt="..."></a>
+          </div>
+          <div class="carousel-item" data-bs-interval="1000">
+            <a href="Booking.html"><img src="slider3.png" class="d-block w-100" alt="..."></a>
+          </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bg-info" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon bg-info" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Explore More International Destinations -->
+    <section class="container mt-5">
+      <h2 class="text-center mb-4">🌍 Explore More International Destinations</h2>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4" data-aos="fade-up" data-aos-duration="1000">
+          <div class="card shadow-lg border-0">
+            <img src="paris.jpg" class="card-img-top" alt="Paris" id="card">
+            <div class="card-body">
+              <h5 class="card-title">Paris, France</h5>
+              <p class="card-text">Experience the City of Lights with its iconic landmarks and romantic charm.</p>
+              <a href="Destination.html" class="btn btn-primary">Discover More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4" data-aos="fade-up" data-aos-duration="1200">
+          <div class="card shadow-lg border-0">
+            <img src="bali.jpg" class="card-img-top" alt="Bali" id="card">
+            <div class="card-body">
+              <h5 class="card-title">Bali, Indonesia</h5>
+              <p class="card-text">Immerse yourself in Bali's tropical beaches, culture, and breathtaking temples.</p>
+              <a href="Destination.html" class="btn btn-primary">Discover More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4" data-aos="fade-up" data-aos-duration="1400">
+          <div class="card shadow-lg border-0">
+            <img src="switzerland.jpg" class="card-img-top" alt="Switzerland" id="card">
+            <div class="card-body">
+              <h5 class="card-title">Switzerland</h5>
+              <p class="card-text">Explore the Alps, scenic train rides, and serene landscapes of Switzerland.</p>
+              <a href="Destination.html" class="btn btn-primary">Discover More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Explore India Section -->
+    <section class="container mt-5">
+      <h2 class="text-center mb-4">🇮🇳 Explore Incredible India</h2>
+      <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-duration="1000">
+          <div class="card shadow-lg border-0">
+            <img src="tajmahal.jpeg" class="card-img-top" alt="Taj Mahal" id="img2">
+            <div class="card-body">
+              <h5 class="card-title">Taj Mahal, Agra</h5>
+              <p class="card-text">A symbol of love and one of the Seven Wonders of the World.</p>
+              <a href="Destination.html" class="btn btn-primary">Discover More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-duration="1100">
+          <div class="card shadow-lg border-0">
+            <img src="jaipur.jpeg" class="card-img-top" alt="Jaipur" id="img2">
+            <div class="card-body">
+              <h5 class="card-title">Jaipur, Rajasthan</h5>
+              <p class="card-text">The Pink City, famous for its palaces, forts, and vibrant culture.</p>
+              <a href="Destination.html" class="btn btn-primary">Discover More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-duration="1200">
+          <div class="card shadow-lg border-0">
+            <img src="varanasi.jpeg" class="card-img-top" alt="Varanasi" id="img2">
+            <div class="card-body">
+              <h5 class="card-title">Varanasi, Uttar Pradesh</h5>
+              <p class="card-text">One of the world's oldest cities, known for its ghats and spiritual essence.</p>
+              <a href="Destination.html" class="btn btn-primary">Discover More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-duration="1300">
+          <div class="card shadow-lg border-0">
+            <img src="kerala.jpg" class="card-img-top" alt="Kerala" id="img2">
+            <div class="card-body">
+              <h5 class="card-title">Kerala Backwaters</h5>
+              <p class="card-text">Serene houseboats, lush greenery, and mesmerizing backwaters.</p>
+              <a href="Destination.html" class="btn btn-primary">Discover More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-duration="1400">
+          <div class="card shadow-lg border-0">
+            <img src="goa.jpg" class="card-img-top" alt="Goa" id="img2">
+            <div class="card-body">
+              <h5 class="card-title">Goa Beaches</h5>
+              <p class="card-text">Golden sands, vibrant nightlife, and the best coastal vibes.</p>
+              <a href="Destination.html" class="btn btn-primary">Discover More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-duration="1500">
+          <div class="card shadow-lg border-0">
+            <img src="ladakh.jpeg" class="card-img-top" alt="Ladakh" id="img2">
+            <div class="card-body">
+              <h5 class="card-title">Ladakh</h5>
+              <p class="card-text">Breathtaking landscapes, high-altitude passes, and monasteries.</p>
+              <a href="Destination.html" class="btn btn-primary">Discover More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-duration="1600">
+          <div class="card shadow-lg border-0">
+            <img src="andaman.jpg" class="card-img-top" alt="Andaman" id="img2">
+            <div class="card-body">
+              <h5 class="card-title">Andaman Islands</h5>
+              <p class="card-text">Pristine beaches, crystal-clear waters, and exotic marine life.</p>
+              <a href="Destination.html" class="btn btn-primary">Discover More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-duration="1700">
+          <div class="card shadow-lg border-0">
+            <img src="rann.jpeg" class="card-img-top" alt="Rann of Kutch" id="img2">
+            <div class="card-body">
+              <h5 class="card-title">Rann of Kutch</h5>
+              <p class="card-text">The vast white desert and the beautiful Rann Utsav festival.</p>
+              <a href="Destination.html" class="btn btn-primary">Discover More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-4 mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 text-center text-md-start">
+            <h4 class="fw-bold">PackNGo</h4>
+            <p>– Your Ultimate Travel Companion! PackNGo is your one-stop destination for hassle-free travel planning. Whether you're looking for quick weekend getaways, adventure trips, or international vacations, we make it easy to pack your bags and go!</p>
+          </div>
+
+          <div class="col-md-4 text-center">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="Home.html" class="text-white text-decoration-none">Home</a></li>
+              <li><a href="About.html" class="text-white text-decoration-none">About</a></li>
+              <li><a href="Contact.html" class="text-white text-decoration-none">Contact</a></li>
+              <li><a href="Privacy.html" class="text-white text-decoration-none">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 text-center text-md-end">
+            <h5>Follow Us</h5>
+            <a href="#" class="text-white me-3 fs-4"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-white me-3 fs-4"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" class="text-white fs-4"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="text-center mt-3">
+          <p class="mb-0">&copy; 2025 PackNGo. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

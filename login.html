@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="icon" href="Logo2.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <style>
+/* ==================== NAVBAR FIX ==================== */
+#nav1 {
+  min-height: 90px;
+  padding: 5px 15px;
+}
+
+/* Navbar logo */
+#img1 {
+  max-width: 200px;
+  max-height: 150px;
+  width: auto;
+  height: auto;
+  position: relative;
+  bottom: 10px;
+}
+
+/* Tablet & Mobile Fix */
+@media (max-width: 992px) {
+  #nav1 {
+    height: auto;
+  }
+
+  #img1 {
+    max-width: 160px;
+    max-height: 120px;
+    bottom: 0;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 576px) {
+  #img1 {
+    max-width: 130px;
+    max-height: 100px;
+  }
+}
+
+/* ==================== BODY ==================== */
+body {
+  /* background-image: url(bg1.png); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+}
+
+/* ==================== LOGIN CARD ==================== */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 90px); /* full height minus navbar */
+}
+
+.login-card {
+  height: 600px;
+  width: 450px;
+  max-width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+</style>
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-info" id="nav1">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="logo2.png" alt="loading..." id="img1"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="Booking.html"><i class="fa-solid fa-pen-to-square"></i> Booking</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Destination.html"><i class="fa-solid fa-plane"></i> Destinations</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="About.html">About</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="Contactus.html">Contact Us</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="policy.html">Terms & Privacy Policy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Blog.html"><i class="fa-solid fa-bookmark"></i> Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="login.html"><i class="fa-solid fa-user"></i> Login</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" style="width: 300px;" placeholder="Explore your Journey..." aria-label="Search">
+                    <button class="btn btn-outline-success bg-info-subtle" type="submit" style="width: 45%;"><i class="fa-brands fa-searchengin"></i> Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Page -->
+    <div class="login-container " style="background-image: url(bg1.png);">
+        <div class="card shadow-lg p-4 login-card bg-info-subtle">
+            <div class="text-center mb-1">
+                <a href="Home.html"><img src="logo2.png" alt="Loading..." style="max-width: 200px;"></a>
+            </div>
+            <form>
+                <div class="mb-3">
+                    <label for="Email" class="form-label">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email">
+                </div>
+                <div class="mb-3">
+                    <label for="Password" class="form-label">Password:</label>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password">
+                </div>
+                <button type="submit" class="btn btn-secondary w-100">Login</button>
+            </form>
+            <div class="mt-3 text-center">
+                <a href="signup.html" class="text-decoration-none">Create an account</a><br>
+                <a href="forgotpassword.html" class="text-decoration-none">Forgot password</a>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
