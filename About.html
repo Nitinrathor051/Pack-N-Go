@@ -18,82 +18,30 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* ==================== HEADER & TEXT ANIMATIONS ==================== */
-.header-bg {
-  animation: fadeInDown 1.5s ease-in-out;
-}
-
+/* ==================== HEADINGS & TEXT ==================== */
 .container h2 {
   border-bottom: 2px solid #17a2b8;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
-  animation: slideInLeft 1s ease-in-out;
 }
 
 .container p {
-  animation: fadeIn 2s ease-in-out;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Hover effects */
-.container h2:hover {
-  color: #ffcc00;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.container p:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s ease;
-}
-
-/* ==================== KEYFRAMES ==================== */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
+/* ==================== ANIMATIONS ==================== */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-/* ==================== GENERAL LAYOUT ==================== */
-header {
-  height: 200px;
-}
-
-.container {
-  margin-top: 50px;
-}
-
-/* ==================== FLIP CARD TEAM SECTION ==================== */
+/* ==================== FLIP CARD ==================== */
 .flip-card {
   background-color: transparent;
   width: 250px;
   height: 350px;
   perspective: 1000px;
-  margin: 20px;
+  margin: 15px;
 }
 
 .flip-card-inner {
@@ -114,12 +62,8 @@ header {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  border-radius: 15px;
+  border-radius: 12px;
   overflow: hidden;
-}
-
-.flip-card-front {
-  background-color: #ffffff;
 }
 
 .flip-card-front img {
@@ -132,66 +76,57 @@ header {
   background-color: #a8e063;
   color: black;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   transform: rotateY(180deg);
 }
 
-/* ==================== PROFILE INFO ==================== */
+/* ==================== PROFILE NAME ==================== */
 .profile-name {
   background: #7CD300;
-  padding: 10px;
-  font-size: 18px;
+  padding: 8px;
+  font-size: 16px;
   font-weight: bold;
-  color: black;
-  width: 100%;
   position: absolute;
   bottom: 0;
+  width: 100%;
   text-align: center;
 }
 
-.social-icons a {
-  margin: 10px;
-  font-size: 24px;
-  color: black;
-  text-decoration: none;
-}
-
-.social-icons a:hover {
-  color: #333;
-}
-
-/* ==================== MOBILE & TABLET FIX (IMPORTANT) ==================== */
+/* ==================== MOBILE VIEW (2 CARDS PER ROW) ==================== */
 @media (max-width: 768px) {
 
-  /* Stack cards vertically */
   .container.d-flex {
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
-  /* Responsive card size */
   .flip-card {
-    width: 90%;
-    max-width: 320px;
-    height: auto;
-    margin: 15px 0;
+    width: 45%;          /* 2 cards per row */
+    height: 260px;       /* smaller height */
+    margin: 10px;
   }
 
-  /* Control inner height */
   .flip-card-inner {
-    height: 420px;
+    height: 100%;
+  }
+
+  .profile-name {
+    font-size: 14px;
+    padding: 6px;
   }
 }
 
-/* Extra small devices */
-@media (max-width: 576px) {
-  .flip-card-inner {
-    height: 380px;
+/* ==================== EXTRA SMALL DEVICES ==================== */
+@media (max-width: 480px) {
+  .flip-card {
+    width: 46%;
+    height: 240px;
   }
 }
 </style>
+
 
   </head>
   <body class="bg-info-subtle">
