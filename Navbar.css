@@ -1,0 +1,75 @@
+/* ==================== NAVBAR (COMMON FOR ALL PAGES) ==================== */
+
+/* Navbar container */
+#nav1 {
+  height: 90px;                 /* same as your design */
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+}
+
+/* Navbar logo */
+#img1 {
+  width: auto;
+  max-width: 200px;
+  max-height: 180px;
+  position: relative;
+  bottom: 16px;                 /* preserved exactly */
+}
+
+/* Navbar links alignment */
+.navbar-nav .nav-link {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+/* Search input default */
+.navbar input.form-control {
+  width: 220px;
+}
+
+/* ==================== RESPONSIVE NAVBAR ==================== */
+
+/* Medium screens (tablets & small laptops) */
+@media (max-width: 992px) {
+  #nav1 {
+    height: auto;               /* allow wrapping */
+    padding: 8px 16px;
+  }
+
+  #img1 {
+    max-width: 180px;
+    max-height: 150px;
+    bottom: 0;
+  }
+
+  .navbar input.form-control {
+    width: 180px !important;
+  }
+}
+
+/* Small screens */
+@media (max-width: 768px) {
+  #img1 {
+    max-width: 150px;
+    max-height: 120px;
+  }
+
+  .navbar input.form-control {
+    width: 100% !important;
+    margin-bottom: 10px;
+  }
+
+  .navbar .btn {
+    width: 100% !important;
+    margin-bottom: 10px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 576px) {
+  #img1 {
+    max-width: 120px;
+    max-height: 90px;
+  }
+}
